@@ -1,0 +1,210 @@
+---
+import "../styles/global.css";
+
+const name = "Connor Tunesi";
+const gameTitle = "Cloak And Coin";
+---
+
+<html lang="en" class="scroll-smooth">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <title>{name} | Gameplay Systems Engineer</title>
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700;800&family=Outfit:wght@300;600&display=swap" rel="stylesheet">
+    </head>
+    
+    <body class="bg-slate-50 text-slate-900 font-['Plus_Jakarta_Sans'] selection:bg-indigo-100">
+        
+        <nav class="sticky top-0 z-50 bg-slate-50/80 backdrop-blur-md border-b border-slate-200 px-6 py-4">
+            <div class="max-w-5xl mx-auto flex justify-between items-center">
+                <span class="font-bold tracking-tight text-lg">{name}</span>
+                <div class="flex gap-6 text-sm font-medium text-slate-600">
+                    <a href="#work" class="hover:text-indigo-600 transition">Selected Work</a>
+                    <a href="#about" class="hover:text-indigo-600 transition">About Me</a>
+                    <a href="mailto:connor@example.com" class="text-indigo-600 font-bold underline decoration-2 underline-offset-4">Contact</a>
+                </div>
+            </div>
+        </nav>
+
+        <main class="max-w-5xl mx-auto px-6">
+            
+            <header class="py-24 md:py-32">
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-950 mb-8 leading-[1.1]">
+                    I engineer the <span class="text-indigo-600">systems</span> that make multiplayer games work.
+                </h1>
+
+                <p class="text-xl md:text-2xl text-slate-600 max-w-2xl leading-relaxed font-light">
+                    I’m Connor, a game developer based in the United Kingdom. I specialise in multiplayer architecture, AI behaviour, and gameplay programming in Unreal Engine 5, backed by years of production Python backend engineering.
+                </p>
+
+                <div class="flex flex-wrap gap-4 mt-10 text-sm font-semibold text-slate-700">
+                    <span class="px-4 py-2 bg-white rounded-full border border-slate-200">Multiplayer Architecture</span>
+                    <span class="px-4 py-2 bg-white rounded-full border border-slate-200">AI Systems</span>
+                    <span class="px-4 py-2 bg-white rounded-full border border-slate-200">C++ & Python</span>
+                    <span class="px-4 py-2 bg-white rounded-full border border-slate-200">Engine-Agnostic Mindset</span>
+                </div>
+            </header>
+
+            <section id="work" class="py-20">
+                <div class="mb-12">
+                    <h2 class="text-3xl font-bold mb-2">Featured Project</h2>
+                    <p class="text-slate-500">A shipped multiplayer title built from the ground up.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12 items-start bg-white rounded-[2rem] p-8 md:p-12 border border-slate-200 shadow-sm">
+                    <div class="space-y-8">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-widest text-green-600 mb-2 block">Shipped on Steam</span>
+                            <h3 class="text-4xl font-extrabold text-slate-900 mb-4">{gameTitle}</h3>
+                            <p class="text-slate-600 leading-relaxed italic">
+                                A 4-player cooperative stealth heist game where networking precision and AI consistency are the difference between success and detection.
+                            </p>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                                <h4 class="font-bold text-sm text-slate-900 mb-2 underline decoration-indigo-200 decoration-4 underline-offset-1">
+                                    The Technical Challenge
+                                </h4>
+                                <p class="text-sm text-slate-600 leading-relaxed">
+                                    I designed and implemented a custom C++ state synchronisation buffer to keep loot physics and guard AI perfectly aligned across 4 clients. 
+                                    The result was stable co-op sessions with reduced perceived latency and no gameplay-breaking desync under high-ping conditions.
+                                </p>
+                            </div>
+                            
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-slate-200 text-slate-700 text-[11px] font-bold rounded-full">Unreal Engine 5</span>
+                                <span class="px-3 py-1 bg-slate-200 text-slate-700 text-[11px] font-bold rounded-full">C++</span>
+                                <span class="px-3 py-1 bg-slate-200 text-slate-700 text-[11px] font-bold rounded-full">Networking</span>
+                                <span class="px-3 py-1 bg-slate-200 text-slate-700 text-[11px] font-bold rounded-full">Steamworks API</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="aspect-square bg-slate-100 rounded-3xl overflow-hidden shadow-inner flex items-center justify-center">
+                        <span class="text-slate-400 font-medium italic">[Gameplay GIF or Screenshot]</span>
+                    </div>
+                </div>
+            </section>
+
+			<section id="deep-dives" class="py-20 border-t border-slate-200">
+				<div class="mb-12">
+					<h2 class="text-3xl font-bold mb-2">Technical Deep Dives</h2>
+					<p class="text-slate-500">Systems I designed and shipped in production.</p>
+				</div>
+
+				<div class="space-y-12">
+
+					<!-- Multiplayer Architecture -->
+					<div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">
+						<h3 class="text-2xl font-bold text-slate-900 mb-4">
+							Steamworks P2P Multiplayer Architecture
+						</h3>
+
+						<p class="text-slate-600 leading-relaxed mb-4">
+							Cloak And Coin is built as a fully functional 4-player cooperative experience using the Steamworks API P2P networking layer. 
+							I implemented and stabilised the entire connection flow — from session creation and lobby management to peer authority handling and replication strategy.
+						</p>
+
+						<p class="text-slate-600 leading-relaxed mb-4">
+							The goal was reliability over ideal conditions. The system was designed to tolerate inconsistent latency while maintaining consistent guard AI state and loot physics across all connected peers.
+						</p>
+
+						<div class="flex flex-wrap gap-2 mt-6">
+							<span class="px-3 py-1 bg-slate-200 text-slate-700 text-[11px] font-bold rounded-full">Steamworks API</span>
+							<span class="px-3 py-1 bg-slate-200 text-slate-700 text-[11px] font-bold rounded-full">P2P Networking</span>
+							<span class="px-3 py-1 bg-slate-200 text-slate-700 text-[11px] font-bold rounded-full">Replication Strategy</span>
+							<span class="px-3 py-1 bg-slate-200 text-slate-700 text-[11px] font-bold rounded-full">Session Stability</span>
+						</div>
+					</div>
+
+					<!-- Achievements & Platform Integration -->
+					<div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">
+						<h3 class="text-2xl font-bold text-slate-900 mb-4">
+							Full Steam Platform Integration
+						</h3>
+
+						<p class="text-slate-600 leading-relaxed mb-4">
+							Beyond multiplayer, I implemented complete Steam achievements integration, ensuring unlock conditions were authoritative, persistent, and resistant to desynchronisation across sessions.
+						</p>
+
+						<p class="text-slate-600 leading-relaxed">
+							This required careful handling of gameplay events, validation logic, and cross-session persistence to prevent duplicate triggers or incorrect unlock states.
+						</p>
+
+						<div class="flex flex-wrap gap-2 mt-6">
+							<span class="px-3 py-1 bg-slate-200 text-slate-700 text-[11px] font-bold rounded-full">Steam Achievements</span>
+							<span class="px-3 py-1 bg-slate-200 text-slate-700 text-[11px] font-bold rounded-full">Event Validation</span>
+							<span class="px-3 py-1 bg-slate-200 text-slate-700 text-[11px] font-bold rounded-full">Persistent Systems</span>
+						</div>
+					</div>
+
+					<!-- Career Mode & Persistence -->
+					<div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">
+						<h3 class="text-2xl font-bold text-slate-900 mb-4">
+							Career Mode, Economy & Steam Cloud Save
+						</h3>
+
+						<p class="text-slate-600 leading-relaxed mb-4">
+							I designed and implemented a persistent Career Mode featuring contract re-rolling, in-game currency progression, and long-term player data tracking.
+						</p>
+
+						<p class="text-slate-600 leading-relaxed mb-4">
+							All save data is structured for consistency and stored using Steam Cloud, ensuring player progression is synchronised securely across devices.
+						</p>
+
+						<p class="text-slate-600 leading-relaxed">
+							The economy and contract systems were built to be data-driven, allowing new contracts and modifiers to be added without requiring structural rewrites.
+						</p>
+
+						<div class="flex flex-wrap gap-2 mt-6">
+							<span class="px-3 py-1 bg-slate-200 text-slate-700 text-[11px] font-bold rounded-full">Data-Driven Design</span>
+							<span class="px-3 py-1 bg-slate-200 text-slate-700 text-[11px] font-bold rounded-full">Steam Cloud</span>
+							<span class="px-3 py-1 bg-slate-200 text-slate-700 text-[11px] font-bold rounded-full">Save Systems</span>
+							<span class="px-3 py-1 bg-slate-200 text-slate-700 text-[11px] font-bold rounded-full">Progression Architecture</span>
+						</div>
+					</div>
+
+				</div>
+			</section>
+
+            <section id="about" class="py-20 border-t border-slate-200">
+                <div class="grid md:grid-cols-3 gap-12">
+                    <div class="md:col-span-2">
+                        <h2 class="text-3xl font-bold mb-6 text-slate-900 underline decoration-indigo-500 decoration-8 underline-offset-[-2px] decoration-skip-ink">
+                            From Backend Infrastructure to the Game Loop
+                        </h2>
+
+                        <p class="text-lg text-slate-600 leading-relaxed mb-6">
+                            Outside of game development, I work professionally as a Python Backend Engineer, building scalable APIs and distributed systems. 
+                            That experience directly informs how I design gameplay systems — with clarity, maintainability, and long-term stability in mind.
+                        </p>
+
+                        <p class="text-lg text-slate-600 leading-relaxed">
+                            While Unreal Engine is currently my primary tool, I’m actively expanding into Unity to deepen my engine-level understanding and remain flexible across technical stacks. 
+                            I care about architecture and problem solving first — the engine is simply the medium.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="p-6 bg-indigo-600 rounded-3xl text-white shadow-lg">
+                            <h4 class="font-bold mb-4">Core Toolkit</h4>
+                            <ul class="text-sm space-y-2 opacity-95 font-medium">
+                                <li>• Advanced C++ & Python</li>
+                                <li>• Multiplayer Infrastructure</li>
+                                <li>• AI Behaviour Systems</li>
+                                <li>• API & Systems Architecture</li>
+                                <li>• 3D Math & Physics Fundamentals</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="py-20 bg-white border-t border-slate-200 text-center text-slate-500 text-sm">
+            <p>© 2026 {name} • Built with Astro, Tailwind, and a lot of late-night debugging.</p>
+        </footer>
+    </body>
+</html>
