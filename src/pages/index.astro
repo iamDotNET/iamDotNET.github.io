@@ -3,6 +3,12 @@ import "../styles/global.css";
 
 const name = "Connor Tunesi";
 const gameTitle = "Cloak And Coin";
+
+const skills = [
+  { category: "Gameplay & Engines", icon: "bi-controller", items: ["C++", "Python", "Unreal Engine 5", "Unity"] },
+  { category: "Infrastructure", icon: "bi-terminal", items: ["Jenkins", "GitHub Actions", "Git / GitLab"] },
+  { category: "Systems & Cloud", icon: "bi-cloud-check", items: ["AWS EC2 / ECS", "Multiplayer Architecture", "REST APIs"] }
+];
 ---
 
 <html lang="en" class="scroll-smooth">
@@ -10,201 +16,220 @@ const gameTitle = "Cloak And Coin";
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width" />
-        <title>{name} | Gameplay Systems Engineer</title>
-        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700;800&family=Outfit:wght@300;600&display=swap" rel="stylesheet">
+        <title>{name} | Gameplay & Systems Programmer</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@300;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     </head>
     
-    <body class="bg-slate-50 text-slate-900 font-['Plus_Jakarta_Sans'] selection:bg-indigo-100">
+    <body class="bg-slate-50 text-slate-900 font-['Inter'] selection:bg-indigo-100 selection:text-indigo-700">
         
-        <nav class="sticky top-0 z-50 bg-slate-50/80 backdrop-blur-md border-b border-slate-200 px-6 py-4">
-            <div class="max-w-5xl mx-auto flex justify-between items-center">
-                <span class="font-bold tracking-tight text-lg">{name}</span>
-                <div class="flex gap-6 text-sm font-medium text-slate-600">
-                    <a href="#work" class="hover:text-indigo-600 transition">Selected Work</a>
-                    <a href="#about" class="hover:text-indigo-600 transition">About Me</a>
-                    <a href="mailto:connor@example.com" class="text-indigo-600 font-bold underline decoration-2 underline-offset-4">Contact</a>
+        <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 px-8 py-5">
+            <div class="max-w-6xl mx-auto flex justify-between items-center">
+                <span class="font-extrabold tracking-tighter text-xl font-['Outfit'] uppercase">{name}</span>
+                
+                <div class="hidden md:flex items-center gap-8">
+                    <div class="flex gap-8 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400 border-r border-slate-200 pr-8">
+                        <a href="#work" class="hover:text-indigo-600 transition-colors">Projects</a>
+                        <a href="#experience" class="hover:text-indigo-600 transition-colors">Experience</a>
+                        <a href="#tools" class="hover:text-indigo-600 transition-colors">Technical Stack</a>
+                    </div>
+                    
+                    <div class="flex gap-5 text-lg text-slate-400">
+                        <a href="https://github.com/YOUR_GITHUB" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900 transition-colors" title="GitHub">
+                            <i class="bi bi-github"></i>
+                        </a>
+                        <a href="/connor-tunesi-resume.pdf" target="_blank" class="hover:text-slate-900 transition-colors" title="Download Resume">
+                            <i class="bi bi-file-earmark-arrow-down"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/connor-tunesi-959326217/" target="_blank" rel="noopener noreferrer" class="hover:text-[#0077b5] transition-colors" title="LinkedIn Profile">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                    </div>
+
+                    <a href="mailto:your@email.com" class="bg-slate-900 text-white px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-indigo-600 transition-all shadow-lg shadow-slate-200">Contact</a>
                 </div>
             </div>
         </nav>
 
-        <main class="max-w-5xl mx-auto px-6">
+        <main class="max-w-6xl mx-auto px-8">
             
-            <header class="py-24 md:py-32">
-                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-950 mb-8 leading-[1.1]">
-                    I engineer the <span class="text-indigo-600">systems</span> that make multiplayer games work.
-                </h1>
-
-                <p class="text-xl md:text-2xl text-slate-600 max-w-2xl leading-relaxed font-light">
-                    I’m Connor, a game developer based in the United Kingdom. I specialise in multiplayer architecture, AI behaviour, and gameplay programming in Unreal Engine 5, backed by years of production Python backend engineering.
-                </p>
-
-                <div class="flex flex-wrap gap-4 mt-10 text-sm font-semibold text-slate-700">
-                    <span class="px-4 py-2 bg-white rounded-full border border-slate-200">Multiplayer Architecture</span>
-                    <span class="px-4 py-2 bg-white rounded-full border border-slate-200">AI Systems</span>
-                    <span class="px-4 py-2 bg-white rounded-full border border-slate-200">C++ & Python</span>
-                    <span class="px-4 py-2 bg-white rounded-full border border-slate-200">Engine-Agnostic Mindset</span>
+            <header class="py-24 md:py-36 border-b border-slate-200">
+                <div class="max-w-3xl">
+                    <span class="text-indigo-600 font-bold tracking-[0.3em] text-[10px] uppercase mb-4 block">Based in the United Kingdom</span>
+                    <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.05] text-slate-950 mb-8 font-['Outfit']">
+                        Hi there, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-blue-500">Connor</span>
+                    </h1>
+                        <p class="text-xl md:text-2xl text-slate-500 leading-relaxed font-light">
+                            Gameplay & Systems Programmer specializing in multiplayer architecture, AI systems, and backend infrastructure. I build production-ready gameplay systems in Unreal Engine while applying distributed systems experience from professional backend development.
+                        </p>
+                    
+                    <div class="flex md:hidden gap-6 mt-8 text-2xl text-slate-400">
+                        <a href="/connor-tunesi-resume.pdf" target="_blank"><i class="bi bi-file-earmark-arrow-down"></i></a>
+                        <a href="https://www.linkedin.com/in/connor-tunesi-959326217/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                    </div>
                 </div>
             </header>
 
-            <section id="work" class="py-20">
-                <div class="mb-12">
-                    <h2 class="text-3xl font-bold mb-2">Featured Project</h2>
-                    <p class="text-slate-500">A shipped multiplayer title built from the ground up.</p>
+            <section id="work" class="py-24">
+                <div class="flex items-center gap-3 mb-12">
+                    <span class="h-px w-8 bg-indigo-600"></span>
+                    <h2 class="text-xs font-bold uppercase tracking-[0.3em] text-slate-400 font-['Outfit']">Current Projects</h2>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-12 items-start bg-white rounded-[2rem] p-8 md:p-12 border border-slate-200 shadow-sm">
-                    <div class="space-y-8">
-                        <div>
-                            <span class="text-xs font-bold uppercase tracking-widest text-green-600 mb-2 block">Shipped on Steam</span>
-                            <h3 class="text-4xl font-extrabold text-slate-900 mb-4">{gameTitle}</h3>
-                            <p class="text-slate-600 leading-relaxed italic">
-                                A 4-player cooperative stealth heist game where networking precision and AI consistency are the difference between success and detection.
-                            </p>
+                <div class="bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm">
+                    <div class="grid lg:grid-cols-2">
+                        <div class="bg-slate-900 aspect-video lg:aspect-auto relative group">
+                            <img src="https://cdn.impress.games/presskits/eb78f0c66cc2f1761c8501d241ac189c/box-art.png?t=1756229539" alt="Cloak and Coin" class="w-full h-full object-cover opacity-80" />
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <a href="https://www.youtube.com/watch?v=xGLeE_oAnT0" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all">Play Gameplay Trailer</a>
+                            </div>
                         </div>
 
-                        <div class="space-y-6">
-                            <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                                <h4 class="font-bold text-sm text-slate-900 mb-2 underline decoration-indigo-200 decoration-4 underline-offset-1">
-                                    The Technical Challenge
-                                </h4>
-                                <p class="text-sm text-slate-600 leading-relaxed">
-                                    I designed and implemented a custom C++ state synchronisation buffer to keep loot physics and guard AI perfectly aligned across 4 clients. 
-                                    The result was stable co-op sessions with reduced perceived latency and no gameplay-breaking desync under high-ping conditions.
-                                </p>
+                        <div class="p-10 md:p-16">
+                            <div class="flex justify-between items-start mb-6">
+                                <h3 class="text-4xl font-bold tracking-tighter font-['Outfit']">{gameTitle}</h3>
+                                <span class="text-[10px] font-bold px-3 py-1 bg-green-50 text-green-700 border border-green-200 rounded-full uppercase">Shipped</span>
                             </div>
                             
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-slate-200 text-slate-700 text-[11px] font-bold rounded-full">Unreal Engine 5</span>
-                                <span class="px-3 py-1 bg-slate-200 text-slate-700 text-[11px] font-bold rounded-full">C++</span>
-                                <span class="px-3 py-1 bg-slate-200 text-slate-700 text-[11px] font-bold rounded-full">Networking</span>
-                                <span class="px-3 py-1 bg-slate-200 text-slate-700 text-[11px] font-bold rounded-full">Steamworks API</span>
+                            <div class="mb-8">
+                                <h4 class="text-[10px] font-bold uppercase text-slate-400 mb-3">Key Systems Built</h4>
+                                <ul class="space-y-2 text-sm text-slate-700">
+                                    <li class="flex gap-2"><span class="text-indigo-600 font-bold">•</span> Steam P2P multiplayer session system with player state replication</li>
+                                    <li class="flex gap-2"><span class="text-indigo-600 font-bold">•</span> Network-synchronised stealth interactions and throwable physics objects</li>
+                                    <li class="flex gap-2"><span class="text-indigo-600 font-bold">•</span> Guard AI system with perception detection, patrol behaviour and player capture</li>
+                                    <li class="flex gap-2"><span class="text-indigo-600 font-bold">•</span> Procedural contract generator with dynamic objectives and loot spawning</li>
+                                    <li class="flex gap-2"><span class="text-indigo-600 font-bold">•</span> Career progression and save system using Steam Cloud</li>
+                                </ul>
                             </div>
-                        </div>
-                    </div>
+                            
 
-                    <div class="aspect-square bg-slate-100 rounded-3xl overflow-hidden shadow-inner flex items-center justify-center">
-                        <span class="text-slate-400 font-medium italic">[Gameplay GIF or Screenshot]</span>
+                            <div class="grid grid-cols-2 gap-6 mb-10">
+                                <div class="space-y-1">
+                                    <h4 class="text-[10px] font-bold uppercase text-slate-400">Role</h4>
+                                    <p class="text-sm font-semibold">Systems Engineer</p>
+                                </div>
+                                <div class="space-y-1">
+                                    <h4 class="text-[10px] font-bold uppercase text-slate-400">Tech</h4>
+                                    <p class="text-sm font-semibold">UE5, C++, Steam API</p>
+                                </div>
+                            </div>
+
+                            <a href="#" class="inline-flex items-center gap-2 text-sm font-bold text-indigo-600 group">
+                                Read Technical Deep Dive
+                                <i class="bi bi-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>
 
-			<section id="deep-dives" class="py-20 border-t border-slate-200">
-				<div class="mb-12">
-					<h2 class="text-3xl font-bold mb-2">Technical Deep Dives</h2>
-					<p class="text-slate-500">Systems I designed and shipped in production.</p>
-				</div>
+            <section id="experience" class="py-24 border-t border-slate-200">
 
-				<div class="space-y-12">
+                <div class="flex items-center gap-3 mb-12">
+                <span class="h-px w-8 bg-indigo-600"></span>
+                <h2 class="text-xs font-bold uppercase tracking-[0.3em] text-slate-400 font-['Outfit']">Professional Experience</h2>
+                </div>
 
-					<!-- Multiplayer Architecture -->
-					<div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">
-						<h3 class="text-2xl font-bold text-slate-900 mb-4">
-							Steamworks P2P Multiplayer Architecture
-						</h3>
+                <div class="bg-white border border-slate-200 rounded-3xl p-12 shadow-sm">
 
-						<p class="text-slate-600 leading-relaxed mb-4">
-							Cloak And Coin is built as a fully functional 4-player cooperative experience using the Steamworks API P2P networking layer. 
-							I implemented and stabilised the entire connection flow — from session creation and lobby management to peer authority handling and replication strategy.
-						</p>
+                <h3 class="text-3xl font-bold tracking-tight mb-6 font-['Outfit']">
+                Python Backend Developer
+                </h3>
 
-						<p class="text-slate-600 leading-relaxed mb-4">
-							The goal was reliability over ideal conditions. The system was designed to tolerate inconsistent latency while maintaining consistent guard AI state and loot physics across all connected peers.
-						</p>
+                <p class="text-slate-600 leading-relaxed mb-8">
+                I work as a professional backend developer building production infrastructure using Python.
+                My work focuses on reliable distributed systems, REST APIs, and cloud deployments running at scale.
+                This experience directly informs my approach to multiplayer and gameplay system design.
+                </p>
 
-						<div class="flex flex-wrap gap-2 mt-6">
-							<span class="px-3 py-1 bg-slate-200 text-slate-700 text-[11px] font-bold rounded-full">Steamworks API</span>
-							<span class="px-3 py-1 bg-slate-200 text-slate-700 text-[11px] font-bold rounded-full">P2P Networking</span>
-							<span class="px-3 py-1 bg-slate-200 text-slate-700 text-[11px] font-bold rounded-full">Replication Strategy</span>
-							<span class="px-3 py-1 bg-slate-200 text-slate-700 text-[11px] font-bold rounded-full">Session Stability</span>
-						</div>
-					</div>
+                <ul class="space-y-3 text-sm text-slate-700">
+                <li class="flex gap-2"><span class="text-indigo-600 font-bold">•</span> Python backend services using Flask and SQLAlchemy</li>
+                <li class="flex gap-2"><span class="text-indigo-600 font-bold">•</span> Cloud infrastructure deployed on AWS ECS and EC2</li>
+                <li class="flex gap-2"><span class="text-indigo-600 font-bold">•</span> CI/CD pipelines using Jenkins and GitHub Actions</li>
+                <li class="flex gap-2"><span class="text-indigo-600 font-bold">•</span> High-volume data processing and database architecture</li>
+                <li class="flex gap-2"><span class="text-indigo-600 font-bold">•</span> REST API development powering production services</li>
+                </ul>
 
-					<!-- Achievements & Platform Integration -->
-					<div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">
-						<h3 class="text-2xl font-bold text-slate-900 mb-4">
-							Full Steam Platform Integration
-						</h3>
+                </div>
 
-						<p class="text-slate-600 leading-relaxed mb-4">
-							Beyond multiplayer, I implemented complete Steam achievements integration, ensuring unlock conditions were authoritative, persistent, and resistant to desynchronisation across sessions.
-						</p>
+            </section>
 
-						<p class="text-slate-600 leading-relaxed">
-							This required careful handling of gameplay events, validation logic, and cross-session persistence to prevent duplicate triggers or incorrect unlock states.
-						</p>
+            <div class="flex items-center gap-3 mb-12">
+                <span class="h-px w-8 bg-indigo-600"></span>
+                <h2 class="text-xs font-bold uppercase tracking-[0.3em] text-slate-400 font-['Outfit']">Technical Stack</h2>
+            </div>
 
-						<div class="flex flex-wrap gap-2 mt-6">
-							<span class="px-3 py-1 bg-slate-200 text-slate-700 text-[11px] font-bold rounded-full">Steam Achievements</span>
-							<span class="px-3 py-1 bg-slate-200 text-slate-700 text-[11px] font-bold rounded-full">Event Validation</span>
-							<span class="px-3 py-1 bg-slate-200 text-slate-700 text-[11px] font-bold rounded-full">Persistent Systems</span>
-						</div>
-					</div>
-
-					<!-- Career Mode & Persistence -->
-					<div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">
-						<h3 class="text-2xl font-bold text-slate-900 mb-4">
-							Career Mode, Economy & Steam Cloud Save
-						</h3>
-
-						<p class="text-slate-600 leading-relaxed mb-4">
-							I designed and implemented a persistent Career Mode featuring contract re-rolling, in-game currency progression, and long-term player data tracking.
-						</p>
-
-						<p class="text-slate-600 leading-relaxed mb-4">
-							All save data is structured for consistency and stored using Steam Cloud, ensuring player progression is synchronised securely across devices.
-						</p>
-
-						<p class="text-slate-600 leading-relaxed">
-							The economy and contract systems were built to be data-driven, allowing new contracts and modifiers to be added without requiring structural rewrites.
-						</p>
-
-						<div class="flex flex-wrap gap-2 mt-6">
-							<span class="px-3 py-1 bg-slate-200 text-slate-700 text-[11px] font-bold rounded-full">Data-Driven Design</span>
-							<span class="px-3 py-1 bg-slate-200 text-slate-700 text-[11px] font-bold rounded-full">Steam Cloud</span>
-							<span class="px-3 py-1 bg-slate-200 text-slate-700 text-[11px] font-bold rounded-full">Save Systems</span>
-							<span class="px-3 py-1 bg-slate-200 text-slate-700 text-[11px] font-bold rounded-full">Progression Architecture</span>
-						</div>
-					</div>
-
-				</div>
-			</section>
-
-            <section id="about" class="py-20 border-t border-slate-200">
+            <section id="tools" class="py-24 border-t border-slate-200">
                 <div class="grid md:grid-cols-3 gap-12">
-                    <div class="md:col-span-2">
-                        <h2 class="text-3xl font-bold mb-6 text-slate-900 underline decoration-indigo-500 decoration-8 underline-offset-[-2px] decoration-skip-ink">
-                            From Backend Infrastructure to the Game Loop
-                        </h2>
+                    {skills.map(group => (
+                        <div class="p-8 bg-white border border-slate-200 rounded-2xl shadow-sm hover:border-indigo-600 transition-colors group">
+                            <div class="flex items-center gap-4 mb-8">
+                                <div class="w-10 h-10 bg-slate-50 rounded-lg flex items-center justify-center border border-slate-100 group-hover:bg-indigo-600 group-hover:text-white transition-all">
+                                    <i class={`bi ${group.icon} text-lg`}></i>
+                                </div>
+                                <h4 class="text-xs font-bold uppercase tracking-widest text-slate-400">{group.category}</h4>
+                            </div>
+                            <ul class="space-y-3">
+                                {group.items.map(item => (
+                                    <li class="flex items-center gap-2 text-sm font-medium text-slate-700">
+                                        <i class="bi bi-check2 text-indigo-500 font-bold"></i>
+                                        {item}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
+                </div>
+            </section>
 
-                        <p class="text-lg text-slate-600 leading-relaxed mb-6">
-                            Outside of game development, I work professionally as a Python Backend Engineer, building scalable APIs and distributed systems. 
-                            That experience directly informs how I design gameplay systems — with clarity, maintainability, and long-term stability in mind.
-                        </p>
-
-                        <p class="text-lg text-slate-600 leading-relaxed">
-                            While Unreal Engine is currently my primary tool, I’m actively expanding into Unity to deepen my engine-level understanding and remain flexible across technical stacks. 
-                            I care about architecture and problem solving first — the engine is simply the medium.
+            <section id="about" class="py-24 border-t border-slate-200">
+                <div class="grid lg:grid-cols-12 gap-16 items-start">
+                    <div class="lg:col-span-5">
+                        <h2 class="text-4xl font-bold tracking-tighter font-['Outfit'] mb-6 italic text-indigo-600">The Engineering Philosophy</h2>
+                        <p class="text-lg text-slate-500 leading-relaxed italic">
+                            "I treat game development with the same rigor as financial backend infrastructure. High availability, low latency, and clear data ownership aren't just for enterprise apps—they're the foundation of a great player experience."
                         </p>
                     </div>
+                    <div class="lg:col-span-7 space-y-8">
+                        <p class="text-lg text-slate-600 leading-relaxed">
+                            With over 6 years of experience in high-level programming, I bridge the gap between creative design and hardware limitations. Currently, I work as a <strong>Python Developer</strong>, which allows me to bring distributed systems logic into engine-side gameplay loops.
+                        </p>
+                        <p class="text-lg text-slate-600 leading-relaxed">
+                            I specialize in Unreal Engine 5 C++ development but maintain an engine-agnostic mindset, constantly porting systems and workflows to Unity to ensure I can solve problems regardless of the toolset.
+                        </p>
+                        <div class="pt-8 flex gap-6">
+                            <a href="/connor-tunesi-resume.pdf" class="text-sm font-bold border-b-2 border-slate-900 pb-1 flex items-center gap-2 group">
+                                <i class="bi bi-file-earmark-pdf"></i> Download Resume
+                            </a>
 
-                    <div class="space-y-6">
-                        <div class="p-6 bg-indigo-600 rounded-3xl text-white shadow-lg">
-                            <h4 class="font-bold mb-4">Core Toolkit</h4>
-                            <ul class="text-sm space-y-2 opacity-95 font-medium">
-                                <li>• Advanced C++ & Python</li>
-                                <li>• Multiplayer Infrastructure</li>
-                                <li>• AI Behaviour Systems</li>
-                                <li>• API & Systems Architecture</li>
-                                <li>• 3D Math & Physics Fundamentals</li>
-                            </ul>
+                            <a 
+                                href="https://www.linkedin.com/in/connor-tunesi-959326217/" 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                class="text-sm font-bold border-b-2 border-slate-900 pb-1 flex items-center gap-2 group"
+                            >
+                                <i class="bi bi-linkedin"></i> LinkedIn
+                            </a>
                         </div>
                     </div>
                 </div>
             </section>
         </main>
 
-        <footer class="py-20 bg-white border-t border-slate-200 text-center text-slate-500 text-sm">
-            <p>© 2026 {name} • Built with Astro, Tailwind, and a lot of late-night debugging.</p>
+        <footer class="py-16 bg-slate-950 text-white mt-20">
+            <div class="max-w-6xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-8">
+                <div>
+                    <span class="text-xl font-extrabold tracking-tighter font-['Outfit'] uppercase block mb-2">{name}</span>
+                        <p class="text-xs text-slate-500 font-mono tracking-widest">
+                            Gameplay & Systems Engineer — Unreal Engine & Backend Infrastructure
+                        </p>
+                </div>
+                <div class="flex gap-10 text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
+                    <a href="#work" class="hover:text-white transition">Projects</a>
+                    <a href="#about" class="hover:text-white transition">About</a>
+                    <a href="mailto:connortunesibusiness@gmail.com" class="hover:text-white transition">Contact</a>
+                </div>
+            </div>
         </footer>
     </body>
 </html>
