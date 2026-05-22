@@ -1,5 +1,5 @@
 ---
-title: "Building and Designing Cloak And Coin"
+title: "Building and designing Cloak And Coin"
 description: "A deep dive into the systems, architecture, and technical decisions behind Cloak And Coin."
 pubDate: 2026-03-12
 tags: ["Unreal Engine 5", "Steamworks API", "C++"]
