@@ -5,10 +5,16 @@ const name = "Connor Tunesi";
 const gameTitle = "Cloak And Coin";
 
 const skills = [
-  { category: "Gameplay & Engines", icon: "bi-controller", items: ["C++", "Python", "Unreal Engine 5", "Unity", "Steamworks API", "REST APIs"] },
+  { category: "Gameplay & Engines", icon: "bi-controller", items: ["C++", "Python", "Unreal Engine 5", "Unity", "Common UI", "Steamworks API", "REST APIs"] },
   { category: "Version Control", icon: "bi-terminal", items: ["Jenkins", "GitHub Actions", "Git / GitLab"] },
   { category: "Systems & Cloud", icon: "bi-cloud-check", items: ["AWS EC2 / ECS", "Multiplayer Architecture"] }
 ];
+const heroImage = "https://cdn.impress.games/presskits/eb78f0c66cc2f1761c8501d241ac189c/screenshots/26.png?t=1778693360&w=1920";
+
+const cocStats = {
+  wishlists: "3000 Wishlists on Steam",
+  liveSince: "6 months of continuous live support",
+};
 ---
 
 <html lang="en" class="scroll-smooth">
@@ -17,6 +23,12 @@ const skills = [
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <title>{name} | Gameplay & Systems Programmer</title>
+    <meta name="description" content="Gameplay & Systems Programmer specializing in multiplayer architecture, AI systems, and backend infrastructure. Shipped Cloak And Coin on Steam Early Access; currently building Cryptid County in UE5/C++." />
+    <meta property="og:title" content={`${name} | Gameplay & Systems Programmer`} />
+    <meta property="og:description" content="Multiplayer architecture, AI systems, and gameplay programming in Unreal Engine 5. Shipped on Steam, actively building in C++." />
+    <meta property="og:image" content={heroImage} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@300;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
@@ -42,34 +54,44 @@ const skills = [
                 <a href="https://www.linkedin.com/in/connor-tunesi-959326217/" target="_blank" rel="noopener noreferrer" class="hover:text-[#0077b5] transition-colors" title="LinkedIn Profile">
                     <i class="bi bi-linkedin"></i>
                 </a>
-                <!-- <a href="/connor-tunesi-resume.pdf" target="_blank" class="hover:text-slate-900 transition-colors" title="Download Resume">
-                    <i class="bi bi-file-earmark-arrow-down"></i>
-                </a> -->
             </div>
 
             <a href="mailto:connortunesibusiness@gmail.com" class="bg-slate-900 text-white px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-indigo-600 transition-all shadow-lg shadow-slate-200">Contact</a>
         </div>
+
+        <div class="flex md:hidden gap-5 text-xl text-slate-400">
+            <a href="/connor-tunesi-resume.pdf" target="_blank" rel="noopener noreferrer" title="Download Resume"><i class="bi bi-file-earmark-arrow-down"></i></a>
+            <a href="https://github.com/iamDotNET" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/connor-tunesi-959326217/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        </div>
     </div>
 </nav>
 
-<main class="max-w-6xl mx-auto px-8">
+<header class="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-28 md:py-40 overflow-hidden border-b border-slate-200">
+    <div
+        class="absolute inset-0 bg-cover bg-center"
+        style={`background-image: url(${heroImage});`}
+    ></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-slate-950/90 via-slate-950/80 to-slate-950/95"></div>
 
-<header class="py-24 md:py-36 border-b border-slate-200">
-    <div class="max-w-3xl">
-        <span class="text-indigo-600 font-bold tracking-[0.3em] text-[10px] uppercase mb-4 block">Based in the United Kingdom</span>
-        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.05] text-slate-950 mb-8 font-['Outfit']">
-            Hi there, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-blue-500">Connor</span>
-        </h1>
-        <p class="text-xl md:text-2xl text-slate-500 leading-relaxed font-light">
-            Gameplay & Systems Programmer specializing in multiplayer architecture, AI systems, and backend infrastructure. I build production-ready gameplay systems in Unreal Engine while applying distributed systems experience from professional backend development.
-        </p>
-
-        <div class="flex md:hidden gap-6 mt-8 text-2xl text-slate-400">
-            <a href="/connor-tunesi-resume.pdf" target="_blank"><i class="bi bi-file-earmark-arrow-down"></i></a>
-            <a href="https://www.linkedin.com/in/connor-tunesi-959326217/" target="_blank"><i class="bi bi-linkedin"></i></a>
+    <div class="relative max-w-6xl mx-auto px-8">
+        <div class="max-w-3xl">
+            <span class="text-indigo-400 font-bold tracking-[0.3em] text-[10px] uppercase mb-4 block">Based in the United Kingdom</span>
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.05] text-white mb-8 font-['Outfit']">
+                Hi there, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-blue-300">Connor</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-slate-300 leading-relaxed font-light mb-8">
+                Gameplay & Systems Programmer specializing in multiplayer architecture, AI systems, and backend infrastructure. I build production-ready gameplay systems while applying distributed systems experience from professional backend development.
+            </p>
+            <!-- <div class="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-slate-400 border border-slate-700 rounded-full px-4 py-2 bg-white/5 backdrop-blur-sm">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                Currently building Cryptid County — a co-op mystery game in UE5/C++
+            </div> -->
         </div>
     </div>
 </header>
+
+<main class="max-w-6xl mx-auto px-8">
 
 <section id="work" class="py-24">
     <div class="flex items-center gap-3 mb-12">
@@ -94,6 +116,21 @@ const skills = [
                     </span>
                 </div>
 
+                <div class="flex gap-6 mb-8 text-sm">
+                    <!-- <div>
+                        <p class="text-[10px] font-bold uppercase text-slate-400">Reviews</p>
+                        <p class="font-semibold text-slate-900">{cocStats.reviews}</p>
+                    </div> -->
+                    <div>
+                        <p class="text-[10px] font-bold uppercase text-slate-400">Wishlists</p>
+                        <p class="font-semibold text-slate-900">{cocStats.wishlists}</p>
+                    </div>
+                    <div>
+                        <p class="text-[10px] font-bold uppercase text-slate-400">Live Ops</p>
+                        <p class="font-semibold text-slate-900">{cocStats.liveSince}</p>
+                    </div>
+                </div>
+
                 <div class="mb-8">
                     <h4 class="text-[10px] font-bold uppercase text-slate-400 mb-3">Key Systems Built</h4>
                     <ul class="space-y-2 text-sm text-slate-700">
@@ -108,7 +145,7 @@ const skills = [
                 <div class="grid grid-cols-2 gap-6 mb-10">
                     <div class="space-y-1">
                         <h4 class="text-[10px] font-bold uppercase text-slate-400">Role</h4>
-                        <p class="text-sm font-semibold">Gameplay & Systems Programmer</p>
+                        <p class="text-sm font-semibold">Solo Developer</p>
                     </div>
                     <div class="space-y-1">
                         <h4 class="text-[10px] font-bold uppercase text-slate-400">Tech</h4>
@@ -123,12 +160,64 @@ const skills = [
             </div>
         </div>
     </div>
+
+    <div class="bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm mt-8">
+        <div class="grid lg:grid-cols-2">
+            <div class="bg-slate-900 aspect-video lg:aspect-auto relative flex items-center justify-center">
+                <div class="text-center px-8">
+                    <i class="bi bi-search text-4xl text-indigo-400 mb-4 block"></i>
+                    <p class="text-slate-500 text-xs uppercase tracking-widest">Screenshot coming soon</p>
+                </div>
+            </div>
+
+            <div class="p-10 md:p-16">
+                <div class="flex justify-between items-start mb-6">
+                    <h3 class="text-4xl font-bold tracking-tighter font-['Outfit']">Cryptid County</h3>
+                    <span class="text-[10px] font-bold px-3 py-1 bg-indigo-50 text-indigo-700 border border-indigo-200 rounded-full uppercase inline-flex items-center gap-1.5">
+                        <i class="bi bi-hammer text-xs"></i> In Development
+                    </span>
+                </div>
+
+                <p class="text-slate-600 leading-relaxed mb-8 text-sm">
+                    A co-op multiplayer mystery/deduction game built solo in Unreal Engine 5.4 using C++. Players work together to identify a hidden monster among a town's NPCs before it strikes again.
+                </p>
+
+                <div class="mb-8">
+                    <h4 class="text-[10px] font-bold uppercase text-slate-400 mb-3">Key Systems Built</h4>
+                    <ul class="space-y-2 text-sm text-slate-700">
+                        <li class="flex gap-2"><span class="text-indigo-600 font-bold">•</span> Server-authoritative accusation/arrest system with replicated RPCs and HUD delegate binding</li>
+                        <li class="flex gap-2"><span class="text-indigo-600 font-bold">•</span> Data-driven NPC dialogue system and per-NPC interaction state</li>
+                        <li class="flex gap-2"><span class="text-indigo-600 font-bold">•</span> Day/night cycle with replicated time-block state driving NPC scheduling and AI pathing</li>
+                        <li class="flex gap-2"><span class="text-indigo-600 font-bold">•</span> Component-based interaction architecture (interactable/interaction components) shared across NPCs and players</li>
+                        <li class="flex gap-2"><span class="text-indigo-600 font-bold">•</span> Mystery Engine construction with dynamic Monster and clue assignment</li>
+                    </ul>
+                </div>
+
+                <div class="grid grid-cols-2 gap-6 mb-10">
+                    <div class="space-y-1">
+                        <h4 class="text-[10px] font-bold uppercase text-slate-400">Role</h4>
+                        <p class="text-sm font-semibold">Solo Developer</p>
+                    </div>
+                    <div class="space-y-1">
+                        <h4 class="text-[10px] font-bold uppercase text-slate-400">Tech</h4>
+                        <p class="text-sm font-semibold">UE5.4, C++, Enhanced Input</p>
+                    </div>
+                </div>
+
+                <!-- TODO: point this at your actual Cryptid County repo (or a curated code-sample repo) once you're comfortable sharing it -->
+                <a href="https://github.com/iamDotNET" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-bold text-indigo-600 group">
+                    View Source on GitHub
+                    <i class="bi bi-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+        </div>
+    </div>
 </section>
 
 <section id="experience" class="py-24 border-t border-slate-200">
     <div class="flex items-center gap-3 mb-12">
         <span class="h-px w-8 bg-indigo-600"></span>
-        <h2 class="text-xs font-bold uppercase tracking-[0.3em] text-slate-400 font-['Outfit']">Professional Experience</h2>
+        <h2 class="text-xs font-bold uppercase tracking-[0.3em] text-slate-400 font-['Outfit']">Independent Development</h2>
     </div>
 
     <div class="bg-white border border-slate-200 rounded-3xl p-12 shadow-sm mt-8">
@@ -163,8 +252,13 @@ const skills = [
         </ul>
     </div>
 
+    <div class="flex items-center gap-3 mb-12 mt-20">
+        <span class="h-px w-8 bg-indigo-600"></span>
+        <h2 class="text-xs font-bold uppercase tracking-[0.3em] text-slate-400 font-['Outfit']">Employment</h2>
+    </div>
+
     <div class="bg-white border border-slate-200 rounded-3xl p-12 shadow-sm mt-8">
-        <h3 class="text-3xl font-bold tracking-tight mb-6 font-['Outfit']">Python Developer</h3>
+        <h3 class="text-3xl font-bold tracking-tight mb-6 font-['Outfit']">Software Engineer (Python)</h3>
 
         <p class="text-slate-600 leading-relaxed mb-8">
             I work as a professional backend developer building production infrastructure using Python. My work focuses on reliable distributed systems, REST APIs, and cloud deployments running at scale. This experience directly informs my approach to multiplayer and gameplay system design.
@@ -251,6 +345,9 @@ const skills = [
             <a href="#blog" class="hover:text-white transition">About</a>
             <a href="mailto:connortunesibusiness@gmail.com" class="hover:text-white transition">Contact</a>
         </div>
+    </div>
+    <div class="max-w-6xl mx-auto px-8 mt-10 pt-6 border-t border-slate-800">
+        <p class="text-[10px] text-slate-600 font-mono tracking-widest">Site last updated July 2026</p>
     </div>
 </footer>
 
